@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Custom Variables */
+:root {
+  --app-primary: #ec7d1c;
+  --app-secondary: #30d9ff;
+  --app-White: #d8d1d1;
+}
