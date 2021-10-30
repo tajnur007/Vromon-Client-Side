@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #d8d1d1 ;
+    padding: 5px 10px;
+}
+.nav-item:hover {
+    color: #ec7d1c;
+}
+.dropdown-item:hover {
+    color: black;
+}
