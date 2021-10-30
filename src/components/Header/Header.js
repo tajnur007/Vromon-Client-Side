@@ -15,9 +15,12 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container className="d-flex justify-content-between">
+                    {/* Company Logo  */}
                     <div>
                         <NavLink to="/"><img src={companyImage} alt="" /></NavLink>
                     </div>
+
+                    {/* Navbar Items  */}
                     <div>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
@@ -34,28 +37,22 @@ const Header = () => {
                                 Contact Us
                             </NavLink>
 
+                            {/* More Dropdown  */}
                             <NavDropdown title={<span style={{ color: "#d8d1d1" }}>More</span>} id="collasible-nav-dropdown">
-                                <NavDropdown.Item>
-                                    <NavLink exact to="/gallary" className="dropdown-item">
-                                        Gallary
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <NavLink exact to="/myOrders" className="dropdown-item">
-                                        My Orders
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <NavLink exact to="/allOrders" className="dropdown-item">
-                                        Manage All Orders
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <NavLink exact to="/addService" className="dropdown-item">
-                                        Add A New Service
-                                    </NavLink>
-                                </NavDropdown.Item>
+                                <NavLink exact to="/gallary" className="dropdown-item">
+                                    Gallary
+                                </NavLink>
+                                <NavLink exact to="/myOrders" className="dropdown-item">
+                                    My Orders
+                                </NavLink>
+                                <NavLink exact to="/allOrders" className="dropdown-item">
+                                    Manage All Orders
+                                </NavLink>
+                                <NavLink exact to="/addService" className="dropdown-item">
+                                    Add A New Service
+                                </NavLink>
                             </NavDropdown>
+
                             {/* <div className="border-start ms-2 px-2 border-2">
                             {
                                 userName.userName ? <span className="text-primary pe-2">{userName.userName}</span> : ''
