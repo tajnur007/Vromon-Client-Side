@@ -5,12 +5,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import companyImage from '../../resources/images/vromon-xl.png';
+import { FormControl, InputGroup, Button } from 'react-bootstrap';
 
 const Footer = () => {
     return (
         <div>
             <footer className="pt-5 bg-dark">
                 <div className="container">
+                    <div className="mx-5 my-5 newsletter">
+                        <h1 className="fw-bold text-light py-5">Subscribe To Our Newsletter For Latest Update</h1>
+                        <InputGroup className="pb-5 px-5">
+                            <FormControl placeholder="Enter your email" />
+                            <Button variant="info">
+                                SUBSCRIBE
+                            </Button>
+                        </InputGroup>
+                    </div>
+
                     <div className="row">
                         {/* First Section  */}
                         <div className="col-sm-12 col-md-12 col-lg-4 text-start">

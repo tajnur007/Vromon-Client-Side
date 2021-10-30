@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -44,4 +50,10 @@
   --app-secondary: #30d9ff;
   --app-white: #d8d1d1;
   --app-green: #304f47;
+}
+
+
+input, button {
+  outline: none;
+  border: none;
 }
