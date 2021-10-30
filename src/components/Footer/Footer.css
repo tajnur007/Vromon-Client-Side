@@ -1,0 +1,22 @@
+
+.social-icon {
+    font-size: 30px;
+    color: var(--app-secondary);
+    padding-right: 8px;
+    transition: 0.4s ease-in;
+}
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.footer-links {
+    color: #6c757d;
+    text-decoration: none;
+}
+.footer-links:hover {
+    color: var(--app-primary);
+}
+
+.separate-line {
+    border: 1px solid var(--app-white);
+}
