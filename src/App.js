@@ -13,46 +13,49 @@ import AddService from './components/AddService/AddService';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
+import AuthProvider from './contexts/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/destinations">
-            <Destinations />
-          </Route>
-          <Route exact path="/packages">
-            <Packages />
-          </Route>
-          <Route exact path="/contacts">
-            <ContactUs />
-          </Route>
-          <Route exact path="/gallary">
-            <Gallary />
-          </Route>
-          <Route exact path="/myOrders">
-            <MyOrders />
-          </Route>
-          <Route exact path="/allOrders">
-            <AllOrders />
-          </Route>
-          <Route exact path="/addService">
-            <AddService />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/destinations">
+              <Destinations />
+            </Route>
+            <Route exact path="/packages">
+              <Packages />
+            </Route>
+            <Route exact path="/contacts">
+              <ContactUs />
+            </Route>
+            <Route exact path="/gallary">
+              <Gallary />
+            </Route>
+            <Route exact path="/myOrders">
+              <MyOrders />
+            </Route>
+            <Route exact path="/allOrders">
+              <AllOrders />
+            </Route>
+            <Route exact path="/addService">
+              <AddService />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
 
     </div>
   );
