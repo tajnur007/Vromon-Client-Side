@@ -44,17 +44,24 @@ const Header = () => {
                                 <NavLink exact to="/gallary" className="dropdown-item">
                                     Gallary
                                 </NavLink>
-                                <NavLink exact to="/myOrders" className="dropdown-item">
-                                    My Orders
-                                </NavLink>
-                                <NavLink exact to="/allOrders" className="dropdown-item">
-                                    Manage All Orders
-                                </NavLink>
-                                <NavLink exact to="/addService" className="dropdown-item">
-                                    Add A New Service
-                                </NavLink>
+                                {
+                                    user.email ? <NavLink exact to="/myOrders" className="dropdown-item">
+                                        My Orders
+                                    </NavLink> : ''
+                                }
+                                {
+                                    user.email ? <NavLink exact to="/allOrders" className="dropdown-item">
+                                        Manage All Orders
+                                    </NavLink> : ''
+                                }
+                                {
+                                    user.email ? <NavLink exact to="/addService" className="dropdown-item">
+                                        Add A New Service
+                                    </NavLink> : ''
+                                }
                             </NavDropdown>
 
+                            {/* User Section  */}
                             <div className="border-start ms-2 px-2 border-2">
                                 {
                                     user.email ? <span className="text-primary pe-2">{user.displayName}</span> : ''
