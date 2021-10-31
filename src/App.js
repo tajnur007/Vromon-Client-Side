@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -37,15 +38,15 @@ function App() {
             <Route exact path="/gallary">
               <Gallary />
             </Route>
-            <Route exact path="/myOrders">
+            <PrivateRoute exact path="/myOrders">
               <MyOrders />
-            </Route>
-            <Route exact path="/allOrders">
+            </PrivateRoute>
+            <PrivateRoute exact path="/allOrders">
               <AllOrders />
-            </Route>
-            <Route exact path="/addService">
+            </PrivateRoute>
+            <PrivateRoute exact path="/addService">
               <AddService />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login />
             </Route>
