@@ -12,8 +12,8 @@ const Header = () => {
     }
 
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
+        <div className="sticky-top">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container className="d-flex justify-content-between">
                     {/* Company Logo  */}
                     <div>
