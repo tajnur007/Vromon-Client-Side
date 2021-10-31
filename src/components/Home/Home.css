@@ -1,0 +1,29 @@
+.dark-shade {
+    filter: brightness(40%);
+}
+.custom-btn {
+    display: inline-block;
+    position: relative;
+    color: white;
+    background-color: var(--app-green);
+    font-weight: bold;
+    padding: 10px 20px 10px 30px;
+    border-radius: 5px;
+    z-index: 9;
+}
+.custom-btn::before {
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--app-primary);
+    border-radius: 5px;
+    clip-path: circle(27% at -3% 50%);
+    transition: all .4s;
+    z-index: -1;
+}
+.custom-btn:hover::before {
+    clip-path: circle(100%);
+}

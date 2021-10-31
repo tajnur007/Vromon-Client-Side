@@ -2,9 +2,6 @@
     background-color: var(--app-green);
     border-radius: 20px 20px 0px 0px;
 }
-.custom-btn {
-    background-color: var(--app-primary);
-}
 
 .social-icon {
     font-size: 30px;
