@@ -93,7 +93,8 @@ const Footer = () => {
 
                     {/* Footer Lower Section  */}
                     <div className="pb-5 text-muted">
-                        Copyright @ 2021, VROMON. All rights reserved.
+                        Copyright @ 2021, VROMON. All rights reserved. <br />
+                        Developed By: KAZI TAJNUR ISLAM
                     </div>
 
                 </div>
