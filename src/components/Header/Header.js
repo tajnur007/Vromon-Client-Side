@@ -3,8 +3,10 @@ import './Header.css';
 import { Container, Button, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import companyImage from '../../resources/images/vromon-large.png';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logout } = useAuth();
 
     const activeNavItem = {
         fontWeight: "bold",
@@ -53,19 +55,19 @@ const Header = () => {
                                 </NavLink>
                             </NavDropdown>
 
-                            {/* <div className="border-start ms-2 px-2 border-2">
-                            {
-                                userName.userName ? <span className="text-primary pe-2">{userName.userName}</span> : ''
-                            }
-                            {
-                                userName.userName ?
-                                    < Button onClick={handleLogout} variant="primary">Logout</Button>
-                                    :
-                                    <NavLink exact to="/login" activeClassName="selected" className="nav-item">
-                                        Login / Signup
-                                    </NavLink>
-                            }
-                        </div> */}
+                            <div className="border-start ms-2 px-2 border-2">
+                                {
+                                    user.email ? <span className="text-primary pe-2">{user.displayName}</span> : ''
+                                }
+                                {
+                                    user.email ?
+                                        <Button onClick={logout} variant="primary">Logout</Button>
+                                        :
+                                        <NavLink exact to="/login" activeStyle={activeNavItem} className="nav-item">
+                                            Login / Register
+                                        </NavLink>
+                                }
+                            </div>
                         </Navbar.Collapse>
                     </div>
                 </Container>
