@@ -20,7 +20,7 @@
     left: 0;
     background: var(--app-primary);
     border-radius: 5px;
-    clip-path: circle(27% at -3% 50%);
+    clip-path: circle(23% at -3% 50%);
     transition: all .4s;
     z-index: -1;
 }
