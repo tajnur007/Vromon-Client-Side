@@ -64,11 +64,11 @@ const Header = () => {
                             {/* User Section  */}
                             <div className="border-start ms-2 px-2 border-2">
                                 {
-                                    user.email ? <span className="text-primary pe-2">{user.displayName}</span> : ''
+                                    user.email ? <span className="text-app-secondary pe-2">{user.displayName}</span> : ''
                                 }
                                 {
                                     user.email ?
-                                        <Button onClick={logout} variant="primary">Logout</Button>
+                                        <button onClick={logout} className="outline-btn-primary py-1 px-2">Logout</button>
                                         :
                                         <NavLink exact to="/login" activeStyle={activeNavItem} className="nav-item">
                                             Login / Register
