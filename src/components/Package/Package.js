@@ -8,7 +8,7 @@ const Package = (props) => {
     const history = useHistory();
 
     // Handle View Package Details Button Click 
-    const viewServiceDetails = (id) => {
+    const viewPackageDetails = (id) => {
         history.push(`/packages/${id}`);
     }
 
@@ -27,7 +27,7 @@ const Package = (props) => {
                     <Card.Text>
                         Rating: <span className="text-app-primary fw-bold">{rating}</span>
                     </Card.Text>
-                    <button onClick={() => viewServiceDetails(_id)} className="custom-btn">View Details</button>
+                    <button onClick={() => viewPackageDetails(_id)} className="custom-btn">Book Now</button>
                 </Card.Body>
             </Card>
         </Col>
