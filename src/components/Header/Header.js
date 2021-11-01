@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { Container, Button, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import companyImage from '../../resources/images/vromon-large.png';
 import useAuth from '../../hooks/useAuth';
