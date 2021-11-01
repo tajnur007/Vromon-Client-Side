@@ -46,7 +46,7 @@
     border-radius: 5px;
     transition: .4s;
 }
-.outline-btn-primary:hover {
+.outline-btn-green:hover {
     color: white;
     background-color: var(--app-green);
 }
