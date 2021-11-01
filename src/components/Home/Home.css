@@ -6,7 +6,6 @@
     position: relative;
     color: white;
     background-color: var(--app-green);
-    font-weight: bold;
     padding: 10px 20px 10px 30px;
     border-radius: 5px;
     z-index: 9;
@@ -26,4 +25,28 @@
 }
 .custom-btn:hover::before {
     clip-path: circle(100%);
+}
+
+.outline-btn-primary {
+    color: var(--app-primary);
+    background-color: transparent;
+    border: 1px solid var(--app-primary);
+    border-radius: 5px;
+    transition: .4s;
+}
+.outline-btn-primary:hover {
+    color: white;
+    background-color: var(--app-primary);
+}
+
+.outline-btn-green {
+    color: var(--app-green);
+    background-color: transparent;
+    border: 1px solid var(--app-green);
+    border-radius: 5px;
+    transition: .4s;
+}
+.outline-btn-primary:hover {
+    color: white;
+    background-color: var(--app-green);
 }
