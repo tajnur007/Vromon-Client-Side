@@ -16,6 +16,7 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddPackages from './components/AddPackages/AddPackages';
 import SortedPackages from './components/SortedPackages/SortedPackages';
+import BookingConfirmation from './components/BookingConfirmation/BookingConfirmation';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
             <Route exact path="/gallary">
               <Gallary />
             </Route>
+            <PrivateRoute exact path="/booking/:packageID">
+              <BookingConfirmation />
+            </PrivateRoute>
             <PrivateRoute exact path="/myOrders">
               <MyOrders />
             </PrivateRoute>
