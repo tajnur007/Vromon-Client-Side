@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddPackages from './components/AddPackages/AddPackages';
+import SortedPackages from './components/SortedPackages/SortedPackages';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route exact path="/packages">
               <Packages />
+            </Route>
+            <Route exact path="/packages/:keywords">
+              <SortedPackages />
             </Route>
             <Route exact path="/contacts">
               <ContactUs />
