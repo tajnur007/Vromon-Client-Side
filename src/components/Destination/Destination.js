@@ -4,7 +4,7 @@ import { Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 
 const Destination = (props) => {
-    const { _id, name, image } = props.value;
+    const { name, image } = props.value;
     const history = useHistory();
 
     // Handle View Destination Details Button Click 
