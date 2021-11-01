@@ -5,6 +5,7 @@ import banner1 from '../../resources/images/banner-1.png';
 import banner2 from '../../resources/images/banner-2.png';
 import banner3 from '../../resources/images/banner-3.png';
 import Package from '../Package/Package';
+import Destination from '../Destination/Destination';
 
 const Home = () => {
     const [packages, setPackages] = useState([]);
@@ -70,11 +71,22 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
 
+            {/* Package Section  */}
             <div className="container my-5">
                 <h1 className="my-5">Select Your Best Package <br /> For Your Travel</h1>
                 <Row xs={1} md={3} lg={4} className="g-4">
                     {
                         packages.map(data => <Package key={data.key} value={data}></Package>)
+                    }
+                </Row>
+            </div>
+
+            {/* Package Section  */}
+            <div className="container pt-5 my-5">
+                <h1 className="my-5">Select Our Best Popular <br /> Destinations</h1>
+                <Row xs={1} md={3} lg={4} className="g-4">
+                    {
+                        destinations.map(data => <Destination key={data.key} value={data}></Destination>)
                     }
                 </Row>
             </div>
