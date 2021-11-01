@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Row } from 'react-bootstrap';
 import banner1 from '../../resources/images/banner-1.png';
 import banner2 from '../../resources/images/banner-2.png';
 import banner3 from '../../resources/images/banner-3.png';
+import Package from '../Package/Package';
 
 const Home = () => {
+    const [packages, setPackages] = useState([]);
+    const [destinations, setDestinations] = useState([]);
+
+    useEffect(() => {
+        fetch('https://secret-coast-24933.herokuapp.com/packages')
+            .then(resp => resp.json())
+            .then(data => setPackages(data));
+
+        fetch('https://secret-coast-24933.herokuapp.com/destinations')
+            .then(resp => resp.json())
+            .then(data => setDestinations(data));
+    }, [])
+
     return (
         <div>
+            {/* Carousel Banner  */}
             <Carousel fade>
                 <Carousel.Item>
                     <div className="dark-shade">
@@ -54,6 +69,15 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+
+            <div className="container my-5">
+                <h1 className="my-5">Select Your Best Package <br /> For Your Travel</h1>
+                <Row xs={1} md={3} lg={4} className="g-4">
+                    {
+                        packages.map(data => <Package key={data.key} value={data}></Package>)
+                    }
+                </Row>
+            </div>
         </div>
     );
 };
