@@ -9,13 +9,13 @@ const Destination = (props) => {
 
     // Handle View Destination Details Button Click 
     const viewDestinationDetails = (id) => {
-        history.push(`/destinations/${id}`);
+        history.push(`/packages/${id}`);
     }
 
 
     return (
         <Col>
-            <Card onClick={() => viewDestinationDetails(_id)} className="simple-animation cursor">
+            <Card onClick={() => viewDestinationDetails(name.toLowerCase())} className="simple-animation cursor">
                 <div className="d-flex justify-content-center">
                     <Card.Img variant="top" src={image} className="pb-3" />
                 </div>
