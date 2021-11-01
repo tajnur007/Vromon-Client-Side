@@ -9,7 +9,7 @@ const Package = (props) => {
 
     // Handle View Package Details Button Click 
     const viewPackageDetails = (id) => {
-        history.push(`/packages/${id}`);
+        history.push(`/booking/${id}`);
     }
 
     return (
