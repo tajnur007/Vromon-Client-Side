@@ -63,11 +63,11 @@ const Footer = () => {
                         <div className="col-sm-12 col-md-4 col-lg-3 text-start">
                             <h5 className="text-light">Contact Us</h5>
 
-                            <p className="text-muted"><FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: "var(--app-secondary)" }} /> 343, BIDC Bazar, DUET, Gazipur, Bangladesh.</p>
+                            <p className="text-muted"><FontAwesomeIcon icon={faMapMarkerAlt} className="text-app-primary" /> 343, BIDC Bazar, DUET, Gazipur, Bangladesh.</p>
 
-                            <p className="text-muted"><FontAwesomeIcon icon={faPhoneAlt} style={{ color: "var(--app-secondary)" }} /> 01721-919296</p>
+                            <p className="text-muted"><FontAwesomeIcon icon={faPhoneAlt} className="text-app-primary" /> 01721-919296</p>
 
-                            <p className="text-muted"><FontAwesomeIcon icon={faEnvelope} style={{ color: "var(--app-secondary)" }} /> info@vromon.com.bd</p>
+                            <p className="text-muted"><FontAwesomeIcon icon={faEnvelope} className="text-app-primary" /> info@vromon.com.bd</p>
 
                             {/* Social Icons  */}
                             <div>
