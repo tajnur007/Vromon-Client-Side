@@ -55,8 +55,8 @@ const Header = () => {
                                     </NavLink> : ''
                                 }
                                 {
-                                    user.email ? <NavLink exact to="/addService" className="dropdown-item">
-                                        Add A New Service
+                                    user.email ? <NavLink exact to="/addPackage" className="dropdown-item">
+                                        Add A New Package
                                     </NavLink> : ''
                                 }
                             </NavDropdown>
