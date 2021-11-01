@@ -1,0 +1,8 @@
+.simple-animation {
+    transition: 0.4s;
+}
+.simple-animation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px #ccc9c9;
+}
+
