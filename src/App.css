@@ -57,3 +57,23 @@ input, button {
   outline: none;
   border: none;
 }
+
+.text-app-primary {
+  color: var(--app-primary);
+}
+.text-app-secondary {
+  color: var(--app-secondary);
+}
+.text-app-green {
+  color: var(--app-green);
+}
+
+.bg-app-primary {
+  background-color: var(--app-primary);
+}
+.bg-app-secondary {
+  background-color: var(--app-secondary);
+}
+.bg-app-green {
+  background-color: var(--app-green);
+}
