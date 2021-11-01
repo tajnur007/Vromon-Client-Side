@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react';
 import companyLogo from '../../resources/images/vromon-xl.png';
-import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faUserPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { user, errorMsg, login, createAccount, useGoogleAuth } = useAuth();
+    const { errorMsg, login, createAccount, useGoogleAuth } = useAuth();
     const [isLogin, setIsLogin] = useState(false);
 
     const formRef = useRef();
@@ -95,9 +94,9 @@ const Login = () => {
 
                         {/* Google Login Button  */}
                         <div className="form-group text-start mx-5">
-                            <Button onClick={useGoogleAuth} variant="outline-info" className="w-100 mb-4">
+                            <button onClick={useGoogleAuth} className="outline-btn-green py-2 w-100 mb-4">
                                 <FontAwesomeIcon icon={faGoogle} /> Sign in with Google
-                            </Button>
+                            </button>
                         </div>
 
                     </div>
