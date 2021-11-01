@@ -9,12 +9,12 @@ import ContactUs from './components/ContactUs/ContactUs';
 import Gallary from './components/Gallary/Gallary';
 import MyOrders from './components/MyOrders/MyOrders';
 import AllOrders from './components/AllOrders/AllOrders';
-import AddService from './components/AddService/AddService';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddPackages from './components/AddPackages/AddPackages';
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function App() {
               <AllOrders />
             </PrivateRoute>
             <PrivateRoute exact path="/addPackage">
-              <AddService />
+              <AddPackages />
             </PrivateRoute>
             <Route exact path="/login">
               <Login />
