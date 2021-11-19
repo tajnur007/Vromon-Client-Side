@@ -36,6 +36,7 @@ const BookingConfirmation = () => {
         const newOrder = {
             packageID: `${packageID}`,
             packageDetails: `${packageDetailsRef.current.value}`,
+            duration: `${packageInfo.duration}`,
             receiverEmail: `${user.email}`,
             receiverName: `${user.displayName}`,
             mobile: `${mobileRef.current.value}`,
@@ -65,8 +66,12 @@ const BookingConfirmation = () => {
             <div className="d-flex">
                 <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 px-4">
                     <div className="form-floating mb-3 mx-auto">
-                        <input type="text" ref={packageDetailsRef} className="form-control" id="floatingInput" placeholder=" " value={`${packageInfo.name}, ${packageInfo.duration}`} readOnly />
+                        <input type="text" ref={packageDetailsRef} className="form-control" id="floatingInput" placeholder=" " value={`${packageInfo.name}`} readOnly />
                         <label htmlFor="floatingInput">Package Details</label>
+                    </div>
+                    <div className="form-floating mb-3 mx-auto">
+                        <input type="text" ref={packageDetailsRef} className="form-control" id="floatingInput" placeholder=" " value={`${packageInfo.duration}`} readOnly />
+                        <label htmlFor="floatingInput">Duration</label>
                     </div>
                     <div className="form-floating mb-3 mx-auto">
                         <input type="email" className="form-control" id="floatingInput" placeholder=" " value={user.email} readOnly />
