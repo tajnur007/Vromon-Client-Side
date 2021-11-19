@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initFirebaseAuth from "../Firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut, getIdToken } from "firebase/auth";
 
 // Firebase Initializaion Call 
 initFirebaseAuth();
@@ -17,22 +17,20 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
+                getIdToken(user)
+                    .then(idToken => localStorage.setItem('idToken', idToken))
+
                 setUser(user);
             }
         })
     }, [auth]);
 
+
     // Google Login Authentication 
-    const useGoogleAuth = () => {
+    const googleLogin = () => {
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                setUser(result.user);
-                setErrorMsg('');
-            }).catch((error) => {
-                setErrorMsg(error.message);
-            });
+        return signInWithPopup(auth, provider);
     }
 
     // Create Account Process Using Email and Password 
@@ -50,6 +48,22 @@ const useFirebase = () => {
                 }).catch((err) => {
                     setErrorMsg(err.message);
                 });
+
+                // User Info Send to Database 
+                const newUser = { name, email };
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            alert('Your registration successfully completed. Please visit to login page.');
+                        }
+                    })
             })
             .catch((error) => {
                 setErrorMsg(error.message);
@@ -58,13 +72,7 @@ const useFirebase = () => {
 
     // Login Process Using Email and Password 
     const login = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                setErrorMsg('');
-            })
-            .catch((error) => {
-                setErrorMsg(error.message);
-            });
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     // Logout Process For All Login
@@ -80,11 +88,13 @@ const useFirebase = () => {
     // Data Sending 
     return {
         user,
+        setUser,
         errorMsg,
+        setErrorMsg,
         logout,
         login,
         createAccount,
-        useGoogleAuth
+        googleLogin
     };
 };
 

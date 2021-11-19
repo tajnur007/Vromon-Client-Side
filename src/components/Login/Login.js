@@ -4,10 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faUserPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
-    const { errorMsg, login, createAccount, useGoogleAuth } = useAuth();
+    const { setUser, errorMsg, setErrorMsg, login, googleLogin, createAccount } = useAuth();
     const [isLogin, setIsLogin] = useState(false);
+
+    let history = useHistory();
+    const location = useLocation();
+    const redirect_uri = location.state?.from?.pathname || '/';
 
     const formRef = useRef();
     const nameRef = useRef();
@@ -29,10 +34,46 @@ const Login = () => {
     // Method for Email-Password Login
     const handleEmailPasswordLogin = e => {
         e.preventDefault();
-        login(emailRef.current.value, passwordRef.current.value);
+
+        login(emailRef.current.value, passwordRef.current.value)
+            .then((userCredential) => {
+                setErrorMsg('');
+                history.push(redirect_uri);
+            })
+            .catch((error) => {
+                setErrorMsg(error.message);
+            });
+
         formRef.current.reset();
     }
 
+    // Method for Google Login
+    const handleGoogleLogin = e => {
+        e.preventDefault();
+
+        googleLogin()
+            .then((result) => {
+                setUser(result.user);
+                setErrorMsg('');
+
+                // User Info Send to Database 
+                const name = result.user.displayName;
+                const email = result.user.email;
+                const newUser = { name, email };
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+
+                // Redirect Process
+                history.push(redirect_uri);
+            }).catch((error) => {
+                setErrorMsg(error.message);
+            });
+    }
 
     return (
         <div>
@@ -94,7 +135,7 @@ const Login = () => {
 
                         {/* Google Login Button  */}
                         <div className="form-group text-start mx-5">
-                            <button onClick={useGoogleAuth} className="outline-btn-green py-2 w-100 mb-4">
+                            <button onClick={handleGoogleLogin} className="outline-btn-green py-2 w-100 mb-4">
                                 <FontAwesomeIcon icon={faGoogle} /> Sign in with Google
                             </button>
                         </div>
