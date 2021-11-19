@@ -60,7 +60,7 @@ const Login = () => {
                 const name = result.user.displayName;
                 const email = result.user.email;
                 const newUser = { name, email };
-                fetch('http://localhost:5000/users', {
+                fetch('https://secret-coast-24933.herokuapp.com/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

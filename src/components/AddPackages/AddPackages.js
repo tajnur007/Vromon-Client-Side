@@ -26,7 +26,7 @@ const AddPackages = () => {
         // Sending Product Info to Database 
         const newPackage = { key, name, duration, price, rating, image };
 
-        fetch(`http://localhost:5000/addPackage?email=${user.email}`, {
+        fetch(`https://secret-coast-24933.herokuapp.com/addPackage?email=${user.email}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -11,7 +11,7 @@ const MyOrdersData = (props) => {
 
     // Handle Order Cancel Method 
     const handleCancel = () => {
-        const url = `http://localhost:5000/updateOrder`;
+        const url = `https://secret-coast-24933.herokuapp.com/updateOrder`;
         const newOrder = { ...props.value };
         newOrder.status = 'Canceled';
 

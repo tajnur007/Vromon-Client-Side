@@ -12,7 +12,7 @@ const AllOrdersData = (props) => {
 
     // Handle Order Cancel Method 
     const handleUpdate = () => {
-        const url = `http://localhost:5000/updateOrder`;
+        const url = `https://secret-coast-24933.herokuapp.com/updateOrder`;
         const newOrder = { ...props.value };
         newOrder.status = `${statusRef.current.value}`;
 
@@ -33,7 +33,7 @@ const AllOrdersData = (props) => {
 
     // Handle Order Delete Method 
     const handleDelete = () => {
-        const url = `http://localhost:5000/deleteOrder`;
+        const url = `https://secret-coast-24933.herokuapp.com/deleteOrder`;
         const order = { ...props.value };
         fetch(url, {
             method: 'DELETE',

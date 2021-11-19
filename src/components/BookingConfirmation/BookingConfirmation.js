@@ -17,7 +17,7 @@ const BookingConfirmation = () => {
     const [grandTotal, setGrandTotal] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/${packageID}`)
+        fetch(`https://secret-coast-24933.herokuapp.com/packages/${packageID}`)
             .then(resp => resp.json())
             .then(data => setPackageInfo(data))
 
@@ -43,7 +43,7 @@ const BookingConfirmation = () => {
             status: 'Pending'
         };
 
-        fetch(`http://localhost:5000/addOrder`, {
+        fetch(`https://secret-coast-24933.herokuapp.com/addOrder`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
